@@ -24,7 +24,7 @@ from articles.views import Index, CategoriesView, ArticlesView, ContactView, Msg
 
 urlpatterns = [
     path('admin/', xadmin.site.urls),
-    path('', cache_page(10 * 60)(Index.as_view()), name='index'),
+    path('', Index.as_view(), name='index'),
     path('categories/<int:pk>/', CategoriesView.as_view(), name='categories'),   # 文章分类列表
     path('article/<int:pk>/', ArticlesView.as_view(), name='article'),    # 文章详情
     path('contact/', ContactView.as_view(), name='contact'),    # 联系我
